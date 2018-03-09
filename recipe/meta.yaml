@@ -1,4 +1,4 @@
-{% set version = '2.7' %}
+{% set version = "2.8" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ggsci_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ggsci/ggsci_{{ version }}.tar.gz
-  sha256: 647e8d85664e8df7d5e4a32ae1c7c76213928d89a044d5aef6bdabdf5e1b5e95
+  sha256: b4ce7adce7ef23edf777866086f98e29b2b45b58fed085bbd1ffe6ab52d74ae8
 
 build:
   number: 0
