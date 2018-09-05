@@ -1,5 +1,4 @@
-{% set version = "2.8" %}
-
+{% set version = '2.9' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,24 +9,25 @@ package:
 source:
   fn: ggsci_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ggsci_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ggsci/ggsci_{{ version }}.tar.gz
-  sha256: b4ce7adce7ef23edf777866086f98e29b2b45b58fed085bbd1ffe6ab52d74ae8
+    - {{ cran_mirror }}/src/contrib/ggsci_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ggsci/ggsci_{{ version }}.tar.gz
+  sha256: 4af14e6f3657134c115d5ac5e65a2ed74596f9a8437c03255447cd959fe9e33c
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-ggplot2 >=2.0.0
     - r-scales
-
   run:
     - r-base
     - r-ggplot2 >=2.0.0
@@ -35,19 +35,22 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ggsci')"  # [not win]
+    - $R -e "library('ggsci')"           # [not win]
     - "\"%R%\" -e \"library('ggsci')\""  # [win]
 
 about:
-  home: https://ggsci.net, https://github.com/road2stat/ggsci
+  home: https://nanx.me/ggsci/, https://github.com/road2stat/ggsci
   license: GPL-3
   summary: A collection of 'ggplot2' color palettes inspired by plots in scientific journals,
     data visualization libraries, science fiction movies, and TV shows.
   license_family: GPL3
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
-    - jdblischak
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
