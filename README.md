@@ -1,11 +1,11 @@
-About r-ggsci
-=============
+About r-ggsci-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggsci-feedstock/blob/main/LICENSE.txt)
 
 Home: https://nanx.me/ggsci/, https://github.com/road2stat/ggsci
 
 Package license: GPL-3
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggsci-feedstock/blob/main/LICENSE.txt)
 
 Summary: A collection of 'ggplot2' color palettes inspired by plots in scientific journals, data visualization libraries, science fiction movies, and TV shows.
 
