@@ -1,4 +1,4 @@
-{% set version = "3.0.3" %}
+{% set version = "3.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggsci_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggsci/ggsci_{{ version }}.tar.gz
-  sha256: bd9691a09e367487f484ef57755f689b92065d9dbed066e229f79e74b13200d5
+  sha256: 5934b232e6843cf499d3db9b6f90c4239bbc1643df625f50ec45c13add5fbea9
 
 build:
   noarch: generic
