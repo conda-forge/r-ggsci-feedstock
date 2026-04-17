@@ -1,4 +1,4 @@
-{% set version = "4.3.0" %}
+{% set version = "5.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggsci_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggsci/ggsci_{{ version }}.tar.gz
-  sha256: 5e1dac8fcff50761bbd924396b9ae28b2291fbd9ddb99a7c5bef341e3471e75f
+  sha256: d41cd62ed177e0f8ae25e8c2279bc1274a46acd31651c28a6d025c263e1d3ef8
 
 build:
   noarch: generic
